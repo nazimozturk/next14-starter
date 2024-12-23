@@ -7,12 +7,9 @@ import Pagination from "../pagination/Pagination";
 import { useRouter } from "next/navigation";
 
 const getData = async (page) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/blog?page=${page}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${process.env.PUBLIC_API_URL}/blog?page=${page}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong!");

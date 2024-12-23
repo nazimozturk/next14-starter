@@ -6,7 +6,7 @@ import Pagination from "@/components/pagination/Pagination";
 
 const getData = async (page) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/blog?page=${page}`,
+    `${process.env.PUBLIC_API_URL}/api/blog?page=${page}`,
     {
       cache: "no-store",
     }
