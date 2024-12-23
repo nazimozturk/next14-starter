@@ -65,7 +65,6 @@ export const {
   ],
   callbacks: {
     async signIn({ user, account, profile }) {
-      console.log("user1111:", user);
       console.log("Auth Callbacks: ", user, account, profile);
       if (account.provider === "github") {
         connectToDb();
