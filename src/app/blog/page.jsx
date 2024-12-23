@@ -5,9 +5,12 @@ import PostCard from "@/components/postCard/postCard";
 import Pagination from "@/components/pagination/Pagination";
 
 const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/blog?page=${page}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blog?page=${page}`,
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     throw new Error("Something went wrong!");
@@ -32,7 +35,6 @@ const BlogPage = ({ searchParams }) => {
 
     fetchData();
   }, [searchParams.page]);
-
   const POST_PER_PAGE = 6;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;

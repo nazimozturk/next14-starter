@@ -65,7 +65,8 @@ export const {
   ],
   callbacks: {
     async signIn({ user, account, profile }) {
-      // console.log("Auth Callbacks: ", user, account, profile);
+      console.log("user1111:", user);
+      console.log("Auth Callbacks: ", user, account, profile);
       if (account.provider === "github") {
         connectToDb();
         try {
@@ -92,7 +93,7 @@ export const {
             const newUser = new User({
               username: profile.email,
               email: profile.email,
-              img: user.image,
+              img: profile.picture,
             });
             await newUser.save();
           }

@@ -27,7 +27,6 @@ const AdminUsers = async () => {
           </form>
         </div>
       ))}
-      <Pagination />
     </div>
   );
 };

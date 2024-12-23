@@ -5,7 +5,9 @@ import PostUser from "@/components/postUser/postUser";
 
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blog/${slug}`
+  );
 
   if (!res.ok) {
     throw new Error("Bir şeyler yanlış gitti");

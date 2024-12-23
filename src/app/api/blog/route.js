@@ -24,7 +24,6 @@ export const GET = async (req) => {
         console.error(err);
       });
 
-    // const count = Math.ceil((await Post.countDocuments({})) / 6);
     const count = await Post.countDocuments({});
 
     return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }));

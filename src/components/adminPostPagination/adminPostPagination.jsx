@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import styles from "./pagination.module.css";
+import styles from "./adminPostPagination.module.css";
 import { useRouter } from "next/navigation";
 
-const Pagination = ({ page, hasPrev, hasNext }) => {
+const AdminPostPagination = ({ page, hasPrev, hasNext }) => {
   const router = useRouter();
 
   return (
@@ -14,7 +14,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
         disabled={!hasPrev}
         onClick={() => router.push(`?page=${page - 1}`)}
       >
-        Previousa
+        Previous
       </button>
       <button
         disabled={!hasNext}
@@ -27,4 +27,4 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
   );
 };
 
-export default Pagination;
+export default AdminPostPagination;
